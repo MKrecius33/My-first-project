@@ -1,17 +1,10 @@
 #include "mylib.h"
 
-struct duomuo{
-string vardas, pavarde;
-//int paz[20];
-//int *paz2;//dinamiska atmintis
-vector<int> paz;
-int egz;
-double rezult;
-};
+
 
 int main() {
-  vector <duomuo> studentai;
-   duomuo temp;
+  vector <studentas> studentai;
+   studentas temp;
    cout<<"Ivesk varda: ";
    cin>> temp.vardas;
 
