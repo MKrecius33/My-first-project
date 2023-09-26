@@ -12,15 +12,17 @@
   cout << a << "; "<<endl;
 }*/
 
+/*
 studentas ivesk (){
   studentas temp;
   cout<<"Iveskite studento varda: ";
   cin>>temp.vardas;
   cout<<"Iveskite studento pavarde: ";
   cin>>temp.pavarde;
-  //cout<<"Iveskite namu darbu pazymi: ";
-  //cin>>temp.paz;
+  cout<<"Iveskite namu darbu pazymi: ";
+  cin>>temp.paz;
   cout<<"Iveskite egzamino pazymi: ";
   cin>>temp.egz;
   return temp;
 }
+*/

@@ -13,12 +13,13 @@ using std::fixed;//reliesiems sk. nes keicia formata
 using std::left;//teksto lygiavimui pagal d ir k
 using std::right;//-//-
 using std::setprecision;//skaiciaus isvedimo tikslumui
+using std::basic_string;
 
 void outas() ;
 
 struct studentas{
 string vardas, pavarde;
-int paz[5];
+int paz;
 //int *paz2;//dinamiska atmintis
 //vector<int> paz;
 int egz;
