@@ -15,15 +15,16 @@ using std::right;//-//-
 using std::setprecision;//skaiciaus isvedimo tikslumui
 using std::basic_string;
 
-void outas() ;
 
 struct studentas{
-string vardas, pavarde;
+string var;
+string pav;
 int paz;
 //int *paz2;//dinamiska atmintis
 //vector<int> paz;
 int egz;
-float rezult;
+float galut;
 };
 
 studentas ivesk();
+
