@@ -1,16 +1,31 @@
 #include "mylib.h"
 
-
-// veikia vienam studentui
+//Veikia daugiau nei vienam!!!!!
 int main() {
-  studentas a;
-  char c;
-  do{
-  a=ivesk();
-  cout<<"Ar norite ivesti kita studenta?: t/n\n";
-  cin>>c; 
-  }while (c!='n');
-  cout<<endl<<a.var<<" "<<a.pav<<" Galutinis (Vid.) "<<a.galut<<endl;
-return 0;
+    vector<studentas> studentai; 
+
+    int studskaicius;
+
+    cout << "Keliu studentu duomenis norite ivesti? ";
+    cin >> studskaicius;
+
+  
+    for (int i = 0; i < studskaicius; i++) {
+        cout << "Iveskite duomenis " << (i + 1) << "-ajam studentui:" << endl;
+        studentas a = ivesk();
+        studentai.push_back(a);
+    }
+
+    
+    cout << "Ivesti duomenys:" << endl;
+    cout << "Vardas: " << "Pavarde: " << "Galutinis Vid" <<endl;
+    for (int i = 0; i < studentai.size(); i++) {
+        
+    
+    cout<<studentai[i].var<<studentai[i].pav<<studentai[i].galut << endl;
+    
+    }
+
+    return 0;
 }
 
