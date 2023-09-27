@@ -1,6 +1,6 @@
 #include "mylib.h"
 
-//Veikia daugiau nei vienam!!!!!
+//lygiavimas sutvarkytas
 int main() {
     vector<studentas> studentai; 
 
@@ -17,15 +17,19 @@ int main() {
     }
 
     
-    cout << "Ivesti duomenys:" << endl;
-    cout << "Vardas: " << "Pavarde: " << "Galutinis Vid" <<endl;
+    printf("%-20s%-20s%-20s\n","Vardas","Pavarde","Galutinis (Vid)");
+    printf("------------------------------------------------------------\n");
+    //cout << "Vardas: " << "Pavarde: " << "Galutinis Vid" <<endl;
     for (int i = 0; i < studentai.size(); i++) {
         
     
-    cout<<studentai[i].var<<studentai[i].pav<<studentai[i].galut << endl;
-    
+    //cout<<studentai[i].var<<studentai[i].pav<<studentai[i].galut << endl;
+    cout
+      <<setw(20)<<left<<studentai[i].var
+      <<setw(20)<<left<<studentai[i].pav
+      <<setw(20)<<left<<studentai[i].galut
+      <<endl;
     }
-
     return 0;
-}
 
+}
