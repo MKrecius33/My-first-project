@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <cstdio>//lygiavimui su C komandomis
+#include <algorithm>
 using std::cout;
 using std::cin;
 using std::string;
@@ -16,15 +17,16 @@ using std::setprecision;//skaiciaus isvedimo tikslumui
 using std::basic_string;
 
 
+
 struct studentas{
 string var;
 string pav;
-int paz;
+vector<int> paz;
 //int *paz2;//dinamiska atmintis
-//vector<int> paz;
 int egz;
 float galut;
 };
 
 studentas ivesk();
+
 

@@ -1,26 +1,26 @@
 #include "mylib.h"
 
-//medianos funkcija strigo, bet pasirinkimas padarytas
+//veikia su namu darbu sk = n
 int main() {
     vector<studentas> studentai; 
     studentas temp;
-    char raide;
+    char vmraide;
     float pasirinkimas;
     int studskaicius;
 
-    cout << "Keliu studentu duomenis norite ivesti? ";
+    cout << "Keliu studentu duomenis norite ivesti?";
     cin >> studskaicius;
 
   
     for (int i = 0; i < studskaicius; i++) {
-        cout << "Iveskite duomenis " << (i + 1) << "-ajam studentui:" <<      endl;
+        cout << "\nIveskite duomenis " << (i + 1) << "-ajam studentui:" <<      endl;
         studentas a = ivesk();
         studentai.push_back(a);
         
     }
     cout<<"\n";
-    cout << "Jei norite matyti galutini vidurkio bala spauskite v, jei medianos, spauskite m: "<< endl;
-    cin >> raide;
+    cout << "Jei norite matyti galutini vidurkio bala spauskite v, jei medianos,\nspauskite m: "<< endl;
+    cin >> vmraide;
       
      
     printf("\n%-15s%-15s%-15s\n",
@@ -28,9 +28,9 @@ int main() {
     printf("------------------------------------------------------------       \n");
     
     for (int i = 0; i < studentai.size(); i++) {
-        if(raide=='v'){
-      pasirinkimas = studentai[i].galut;
-    } else { pasirinkimas = 999;};
+      if(vmraide=='v'){
+        pasirinkimas = studentai[i].galut;
+      } else { pasirinkimas = 999;};
     
     cout
       <<setw(15)<<left<<studentai[i].var
