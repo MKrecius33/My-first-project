@@ -1,6 +1,8 @@
 #include "mylib.h"
 
-//veikia su namu darbu sk = n
+//generuoja atsitiktinius namu darbus
+//veikia su namu darbu sk = n, bet ne su break funckija
+
 int main() {
     vector<studentas> studentai; 
     studentas temp;
@@ -35,7 +37,7 @@ int main() {
     cout
       <<setw(15)<<left<<studentai[i].var
       <<setw(15)<<left<<studentai[i].pav
-      <<setw(15)<<left<<pasirinkimas
+      <<setw(15)<<left<<pasirinkimas//kaip apvalinti iki x.xx??
       <<endl;
     }
     return 0;
