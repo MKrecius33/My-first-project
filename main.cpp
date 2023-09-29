@@ -24,7 +24,6 @@ int main() {
     cout << "Jei norite matyti galutini vidurkio bala spauskite v, jei medianos,\nspauskite m: "<< endl;
     cin >> vmraide;
       
-     
     printf("\n%-15s%-15s%-15s\n",
       "Vardas","Pavarde","Galutinis (Vid) / Galutinis (Med)");
     printf("------------------------------------------------------------       \n");
@@ -33,12 +32,9 @@ int main() {
       if(vmraide=='v'){
         pasirinkimas = studentai[i].galut;
       } else { pasirinkimas = 999;};
+      
+    printf("%-15s%-15s%-15.2f\n", studentai[i].var.c_str(),                    studentai[i].pav.c_str(),pasirinkimas);
     
-    cout
-      <<setw(15)<<left<<studentai[i].var
-      <<setw(15)<<left<<studentai[i].pav
-      <<setw(15)<<left<<pasirinkimas//kaip apvalinti iki x.xx??
-      <<endl;
     }
     return 0;
 
