@@ -50,7 +50,7 @@ studentas ivesk (){
     cout<<"Iveskite namu darbu pazymi/ius: \n";
     cin >> n;
     temp.paz.push_back(n);
-    cout<<"Ar ivesti kita namu darbu pazymi?: t/n\n"; 
+    cout<<"Ar norite ivesti kita namu darbu pazymi?: t/n\n"; 
     cin>>c;
     
   } while (c !='n');}}
