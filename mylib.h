@@ -29,10 +29,11 @@ struct studentas{
 string var;
 string pav;
 vector<int> paz;
-//int *paz2;//dinamiska atmintis
 int egz;
 float galut;
 };
 
 studentas ivesk();
 studentas nuskaityk();
+float mediana(vector<int> paz);
+void printResults(const vector<studentas>& studentai, char vmraide);

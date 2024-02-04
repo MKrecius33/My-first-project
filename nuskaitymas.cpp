@@ -2,13 +2,10 @@
 
 studentas nuskaityk(){
     char vmraide;
-  float pasirinkimas;
+    float pasirinkimas;
     ifstream file("kursiokai.txt"); 
 
-    /*if (!file.is_open()) {
-        cout << "Error: Could not open the file." << endl;
-        return 1;
-    }*/
+  
     studentas temp;
     vector<studentas> studentai; 
 
@@ -33,6 +30,12 @@ studentas nuskaityk(){
         
         if (!temp.paz.empty()) {
             temp.egz = temp.paz.back();
+          
+            double sum = 0.0;
+            for (int i = 0; i < temp.paz.size(); i++) 
+              {sum += temp.paz[i];}
+              temp.galut = (sum / temp.paz.size()) * 0.4 + temp.egz * 0.6;
+          
             temp.paz.pop_back(); 
         } else {
             cout << "Error: No grades found for 'egz'." << endl;
@@ -43,31 +46,28 @@ studentas nuskaityk(){
     }
 
     file.close(); 
-
-   
+    printResults(studentai, vmraide);
+   /*
     cout<<"\n";
   
-    cout << "Jei norite matyti galutini vidurkio bala spauskite v, jei medianos,\nspauskite m: "<< endl;
-    cin >> vmraide;
+  cout << "Jei norite matyti galutini vidurkio bala spauskite v, jei medianos,\nspauskite m: "<< endl;
+  cin >> vmraide;
       
     printf("\n%-15s%-15s%-15s\n",
       "Vardas","Pavarde","Galutinis (Vid) / Galutinis (Med)");
     printf("------------------------------------------------------------       \n");
   
-        
-    double sum = 0.0;
-  for (int i = 0; i < temp.paz.size(); i++) 
-    {sum += temp.paz[i];}
-    temp.galut = (sum / temp.paz.size()) * 0.4 + temp.egz * 0.6;
-  
-   for (int i = 0; i < studentai.size(); i++) {
+
+  for (int i = 0; i < studentai.size(); i++) {
       if(vmraide=='v'){
         pasirinkimas = studentai[i].galut;
-      } else { pasirinkimas = 999;};
+      } else { pasirinkimas = mediana(studentai[i].paz);
+             };
       
     printf("%-15s%-15s%-15.2f\n", studentai[i].var.c_str(),                    studentai[i].pav.c_str(),pasirinkimas);
       
-    }
+    }*/
 
     return temp;
 }
+
