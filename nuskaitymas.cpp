@@ -15,7 +15,7 @@ studentas nuskaityk(){
 
     while (getline(file, line)) {
         studentas temp;
-        std::istringstream iss(line);
+        istringstream iss(line);
 
         if (!(iss >> temp.var >> temp.pav)) {
             cout << "Error: Unable to read 'var' and 'pav' from line." << endl;
@@ -47,26 +47,9 @@ studentas nuskaityk(){
 
     file.close(); 
     printResults(studentai, vmraide);
-   /*
-    cout<<"\n";
-  
-  cout << "Jei norite matyti galutini vidurkio bala spauskite v, jei medianos,\nspauskite m: "<< endl;
-  cin >> vmraide;
-      
-    printf("\n%-15s%-15s%-15s\n",
-      "Vardas","Pavarde","Galutinis (Vid) / Galutinis (Med)");
-    printf("------------------------------------------------------------       \n");
-  
+   istringstream iss;
+iss.str(line);
 
-  for (int i = 0; i < studentai.size(); i++) {
-      if(vmraide=='v'){
-        pasirinkimas = studentai[i].galut;
-      } else { pasirinkimas = mediana(studentai[i].paz);
-             };
-      
-    printf("%-15s%-15s%-15.2f\n", studentai[i].var.c_str(),                    studentai[i].pav.c_str(),pasirinkimas);
-      
-    }*/
 
     return temp;
 }

@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <fstream>
 #include <sstream> 
+#include <limits>
 //#include <boost/algorithm/string.hpp>
 using std::cout;
 using std::cin;
@@ -21,6 +22,8 @@ using std::right;//-//-
 using std::setprecision;//skaiciaus isvedimo tikslumui
 using std::basic_string;
 using std::ifstream;
+using std::istringstream;
+
 
 
 

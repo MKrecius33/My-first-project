@@ -1,20 +1,6 @@
 #include "mylib.h"
 
-/*
-  studentas ivesk (){
-  studentas temp;
-  cout<<"Iveskite studento varda: ";
-  cin>>temp.var;
-  cout<<"Iveskite studento pavarde: ";
-  cin>>temp.pav;
-  cout<<"Iveskite namu darbu pazymi: ";
-  cin>>temp.paz;
-  cout<<"Iveskite egzamino pazymi: ";
-  cin>>temp.egz;
-  return temp;
-}*/
 
-//veikia su namu darbu sk = n, bet ne su break funckija
 studentas ivesk (){
   int pazskaicius;
   char c;
@@ -23,10 +9,37 @@ studentas ivesk (){
   double s=0;
   float k=0;
   studentas temp;
+  try{
   cout << "Iveskite studento varda: ";
   cin >> temp.var;
+  cout<<"\n";
+    if (!std::all_of(temp.var.begin(), temp.var.end(), [](unsigned char c) {
+            return std::isalpha(c);
+        })) {
+        throw std::invalid_argument("Neteisingas formatas. Vardas gali susidaryti tik is raidziu.");
+    }
+    } catch (const std::invalid_argument& e) {
+        std::cerr << "Klaida: " << e.what() << std::endl;
+        cout << "Iveskite studento varda: ";
+        cin >> temp.var;
+    }
+
+  try{
   cout << "Iveskite studento pavarde: ";
   cin >> temp.pav;
+  cout<<"\n";
+    if (!std::all_of(temp.pav.begin(), temp.pav.end(), [](unsigned char c) {
+      return std::isalpha(c);
+    })) {
+    throw std::invalid_argument("Neteisingas formatas. Pavarde gali susidaryti tik is raidziu.");
+    }
+  } catch (const std::invalid_argument& e) {
+        std::cerr << "Klaida: " << e.what() << std::endl;
+        cout << "Iveskite studento pavarde: ";
+        cin >> temp.pav;
+    }
+  
+  cout<<"\n";
   cout<<"Ar norite atsitiktinai generuoti pazymius? t/n\n";
   cin>>c;
   

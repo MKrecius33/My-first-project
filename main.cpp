@@ -58,16 +58,30 @@ int main() {
     char n;
     
 
-    cout<<"Ar norite nuskaityti faila?: ";
+    cout<<"Ar norite nuskaityti faila? t/n: ";
     cin>>n;
-  
+    cout<<"\n";
     if(n=='t'){ 
       studentas a = nuskaityk();
       studentai.push_back(a);
        }
     else{
-    cout << "Keliu studentu duomenis norite ivesti?";
-    cin >> studskaicius;
+      try {
+          cout << "Keliu studentu duomenis norite ivesti?";
+          cin >> studskaicius;
+
+          if (cin.fail()) {
+              throw std::invalid_argument("Neteisingas formatas. Galima ivesti tik skaiciu.");
+          }
+      } catch (const std::invalid_argument& e) {
+          std::cerr << "Klaida: " << e.what() << std::endl;
+          cout << "Iveskite studentu skaiciu: ";
+          cin.clear(); // Clear the error state of cin
+          cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore invalid input
+          cin >> studskaicius; // Try reading input again
+      }
+
+            
 
   
     for (int i = 0; i < studskaicius; i++) {
@@ -78,27 +92,7 @@ int main() {
     }
       printResults(studentai, vmraide);
     }
-    //cout<<"\n";
-  
-   // cout << "Jei norite matyti galutini vidurkio bala spauskite v, jei medianos,\nspauskite m: "<< endl;
-    //cin >> vmraide;
-
-  /*
-    printf("\n%-15s%-15s%-15s\n",
-      "Vardas","Pavarde","Galutinis (Vid) / Galutinis (Med)");
-    printf("------------------------------------------------------------       \n");
     
-   for (int i = 0; i < studentai.size(); i++) {
-      if(vmraide=='v'){
-        pasirinkimas = studentai[i].galut;
-      } else { pasirinkimas = mediana(studentai[i].paz);};
-      
-    printf("%-15s%-15s%-15.2f\n", studentai[i].var.c_str(),                    studentai[i].pav.c_str(),pasirinkimas);
-   
-   }
-    */
-    //printResults(studentai, vmraide);
-  
     return 0;
 
 }
