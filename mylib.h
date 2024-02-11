@@ -40,3 +40,4 @@ studentas ivesk();
 studentas nuskaityk();
 float mediana(vector<int> paz);
 void printResults(const vector<studentas>& studentai, char vmraide);
+
